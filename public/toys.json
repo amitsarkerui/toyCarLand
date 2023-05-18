@@ -1,0 +1,46 @@
+[
+  {
+    "ImageUrl": "https://example.com/toy_car1.jpg",
+    "ToyName": "Speedster Racer",
+    "sellerName": "Toy Universe",
+    "sellerEmail": "info@toyuniverse.com",
+    "subCategory": "Racing Cars",
+    "price": 29.99,
+    "rating": 4.5,
+    "availableQuantity": 20,
+    "description": "Experience the thrill of speed with the Speedster Racer toy car. It features a sleek design and realistic detailing. Made with high-quality materials, this racing car is built for durability and speed. Whether you're racing against friends or setting new lap records, the Speedster Racer is sure to provide endless hours of fun."
+  },
+  {
+    "ImageUrl": "https://example.com/toy_car2.jpg",
+    "ToyName": "Off-Road Adventure",
+    "sellerName": "Toys Galore",
+    "sellerEmail": "sales@toysgalore.com",
+    "subCategory": "Off-Road Cars",
+    "price": 39.99,
+    "rating": 4.2,
+    "availableQuantity": 15,
+    "description": "Get ready for an off-road adventure with the Off-Road Adventure toy car. With its rugged tires and powerful motor, this car can conquer any terrain. Take it on sandy beaches, rocky mountains, or muddy trails. The Off-Road Adventure car is designed to withstand rough play and provide endless excitement for young adventurers."
+  },
+  {
+    "ImageUrl": "https://example.com/toy_car3.jpg",
+    "ToyName": "City Cruiser",
+    "sellerName": "Toys4Kids",
+    "sellerEmail": "sales@toys4kids.com",
+    "subCategory": "City Cars",
+    "price": 24.99,
+    "rating": 4.0,
+    "availableQuantity": 30,
+    "description": "Let your imagination roam with the City Cruiser toy car. This stylish and sleek car is perfect for cruising through the city streets. It features realistic lights and sounds, making playtime even more immersive. With its smooth handling and comfortable seats, the City Cruiser provides an enjoyable ride for young drivers."
+  },
+  {
+    "ImageUrl": "https://example.com/toy_car4.jpg",
+    "ToyName": "Monster Truck Madness",
+    "sellerName": "Playtime Toys",
+    "sellerEmail": "info@playtimetoys.com",
+    "subCategory": "Monster Trucks",
+    "price": 49.99,
+    "rating": 4.8,
+    "availableQuantity": 10,
+    "description": "Experience the thrill of monster truck racing with the Monster Truck Madness toy car. This powerful and rugged truck can handle any obstacle in its path. With its oversized wheels and suspension system, it's built for jumps, stunts, and high-speed races. Get ready for an adrenaline-pumping adventure with the Monster Truck Madness car."
+  }
+]
