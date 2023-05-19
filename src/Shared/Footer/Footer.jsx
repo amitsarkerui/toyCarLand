@@ -44,7 +44,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Services
                   </a>
@@ -52,7 +52,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Our Products
                   </a>
@@ -60,7 +60,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Toy List
                   </a>
@@ -68,7 +68,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     User Strategy
                   </a>
@@ -83,7 +83,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     About ToyCarLand
                   </a>
@@ -91,7 +91,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Contact & Support
                   </a>
@@ -99,7 +99,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Success History
                   </a>
@@ -107,7 +107,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Setting & Privacy
                   </a>
@@ -124,7 +124,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Home
                   </a>
@@ -132,7 +132,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Our Services
                   </a>
@@ -140,7 +140,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Know Our Team
                   </a>
@@ -148,7 +148,7 @@ const Footer = () => {
                 <li>
                   <a
                     href=" "
-                    className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                    className="text-body-color  hover:text-[#ECCC68] mb-2 inline-block text-base leading-loose"
                   >
                     Download App
                   </a>
@@ -164,7 +164,7 @@ const Footer = () => {
               <div className="mb-6 flex items-center">
                 <a
                   href=" "
-                  className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  className="text-dark   hover:bg-[#ECCC68] border-none hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
                   <svg
                     width="8"
@@ -177,7 +177,7 @@ const Footer = () => {
                 </a>
                 <a
                   href=" "
-                  className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  className="text-dark   hover:bg-[#ECCC68] border-none hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
                   <svg
                     width="16"
@@ -190,7 +190,7 @@ const Footer = () => {
                 </a>
                 <a
                   href=" "
-                  className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  className="text-dark   hover:bg-[#ECCC68] border-none hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
                   <svg
                     width="16"
@@ -203,7 +203,7 @@ const Footer = () => {
                 </a>
                 <a
                   href=" "
-                  className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  className="text-dark   hover:bg-[#ECCC68] border-none hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
                   <svg
                     width="14"
