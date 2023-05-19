@@ -1,24 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../assets/logo/logo.svg";
 import { Link } from "react-router-dom";
+import { AuthContextProvider } from "../../AuthProvider/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContextProvider);
+  const handleLogOut = () => {
+    logOut().then().catch();
+  };
   const navLinks = (
     <>
       <li>
         <Link>Home</Link>
       </li>
       <li>
-        <Link>My Toys</Link>
+        <Link>All Toys</Link>
       </li>
-      <li>
-        <Link>Add a Toys</Link>
-      </li>
+      {user ? (
+        <>
+          <li>
+            <Link>My Toys</Link>
+          </li>
+          <li>
+            <Link>Add a Toys</Link>
+          </li>
+        </>
+      ) : (
+        <></>
+      )}
       <li>
         <Link>Blog</Link>
-      </li>
-      <li>
-        <Link>Contact</Link>
       </li>
     </>
   );
@@ -55,26 +66,30 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        {/* <Link className="btn btn-outline border-[#FF3811] text-[#FF3811]">
-          Appointment
-        </Link> */}
-        {/* {user ? (
+        {user ? (
           <>
             <p>Welcome {user.displayName} !</p>
+            <img
+              className=" ml-2 w-12 h-12 rounded-full object-cover"
+              src={user.photoURL}
+              alt=""
+            />
             <Link>
-              <button className="btn ml-4">Logout</button>
+              <button onClick={handleLogOut} className="btn ml-4">
+                Logout
+              </button>
             </Link>
           </>
         ) : (
           <Link to={"/login"}>
             <button className="btn ml-4">Login</button>
           </Link>
-        )} */}
-        <Link to={"/login"}>
+        )}
+        {/* <Link to={"/login"}>
           <button className="btn ml-4 bg-[#ECCC68] text-gray-900 border-none hover:text-white">
             Login
           </button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

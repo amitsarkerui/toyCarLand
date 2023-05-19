@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo/logo.svg";
 import { AuthContextProvider } from "../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Register = () => {
+  const navigate = useNavigate();
   const { register } = useContext(AuthContextProvider);
   const handleRegister = (e) => {
     e.preventDefault();
@@ -22,10 +24,22 @@ const Register = () => {
           photoURL: photoUrl,
         });
         console.log(registeredUser);
+        Swal.fire({
+          title: "User Created Successfully !",
+          text: "Please Login to continue",
+          icon: "success",
+          confirmButtonText: "Login",
+        });
         form.reset();
+        navigate("/login");
       })
       .catch((err) => {
-        console.log(err.message);
+        Swal.fire({
+          title: `${err.message}`,
+          text: "Please check and try again",
+          icon: "warning",
+          confirmButtonText: "Okey",
+        });
       });
   };
   return (

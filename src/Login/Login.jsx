@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../assets/logo/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContextProvider } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContextProvider);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    login(email, password)
+      .then((res) => {
+        const loggedUser = res.user;
+        navigate("/");
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: `${err.message}`,
+          text: "Please check and try again",
+          icon: "warning",
+          confirmButtonText: "Okey",
+        });
+      });
+  };
   return (
     <div className="mb-5 mt-16">
       <section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700 rounded-xl">
@@ -21,7 +44,7 @@ const Login = () => {
                         />
                       </div>
 
-                      <form>
+                      <form onSubmit={handleLogin}>
                         <h4 className="mb-4">Please login to your account</h4>
 
                         <div className="mb-4">
@@ -38,33 +61,32 @@ const Login = () => {
                           <label className="label">Password</label>
                           <input
                             type="password"
+                            name="password"
                             placeholder="Type your password here"
                             className="input input-bordered w-full"
                           />
                         </div>
-
                         <div className="mb-12 pb-1 pt-1 text-center mt-6">
-                          <button className=" mb-2 btn btn-block bg-[#ECCC68] border-none">
-                            Log in
-                          </button>
-
-                          <a href="#!"></a>
-                        </div>
-
-                        <div className="flex items-center justify-between pb-6">
-                          <p className="mb-0 mr-2">Don't have an account?</p>
-                          <Link to={"/register"}>
-                            <button
-                              type="button"
-                              className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
-                              data-te-ripple-init
-                              data-te-ripple-color="light"
-                            >
-                              Register
-                            </button>
-                          </Link>
+                          <input
+                            type="submit"
+                            value="Login"
+                            className=" mb-2 btn btn-block bg-[#ECCC68] border-none"
+                          />
                         </div>
                       </form>
+                      <div className="flex items-center justify-between pb-6">
+                        <p className="mb-0 mr-2">Don't have an account?</p>
+                        <Link to={"/register"}>
+                          <button
+                            type="button"
+                            className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                            data-te-ripple-init
+                            data-te-ripple-color="light"
+                          >
+                            Register
+                          </button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
 
