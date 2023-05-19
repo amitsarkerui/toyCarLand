@@ -9,6 +9,7 @@ import Login from "./Login/Login.jsx";
 import Register from "./Register/Register.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import AddToys from "./AddToys/AddToys.jsx";
+import AllToys from "./Alltoys/AllToys.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
       {
         path: "/addToys",
         element: <AddToys></AddToys>,
+      },
+      {
+        path: "/allToys",
+        element: <AllToys></AllToys>,
+        loader: () => fetch("http://localhost:5000/allToys"),
       },
     ],
   },
