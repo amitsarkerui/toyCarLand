@@ -19,7 +19,7 @@ const Footer = () => {
                 voluptatem totam rem aperiam.
               </p>
               <p className="text-dark flex items-center text-sm font-medium">
-                <span className="text-primary mr-3">
+                <span className="text-[#ECCC68] mr-3">
                   <svg
                     width="19"
                     height="21"

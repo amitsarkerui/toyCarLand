@@ -8,6 +8,7 @@ import Home from "./Home/Home.jsx";
 import Login from "./Login/Login.jsx";
 import Register from "./Register/Register.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
+import AddToys from "./AddToys/AddToys.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/addToys",
+        element: <AddToys></AddToys>,
       },
     ],
   },

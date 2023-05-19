@@ -22,7 +22,7 @@ const NavBar = () => {
             <Link>My Toys</Link>
           </li>
           <li>
-            <Link>Add a Toys</Link>
+            <Link to={"/addToys"}>Add a Toys</Link>
           </li>
         </>
       ) : (
@@ -85,11 +85,6 @@ const NavBar = () => {
             <button className="btn ml-4">Login</button>
           </Link>
         )}
-        {/* <Link to={"/login"}>
-          <button className="btn ml-4 bg-[#ECCC68] text-gray-900 border-none hover:text-white">
-            Login
-          </button>
-        </Link> */}
       </div>
     </div>
   );
