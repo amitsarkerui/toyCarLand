@@ -68,10 +68,11 @@ const NavBar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <p>Welcome {user.displayName} !</p>
+            {/* <p>Welcome {user.displayName} !</p> */}
             <img
               className=" ml-2 w-12 h-12 rounded-full object-cover"
               src={user.photoURL}
+              title={user.displayName}
               alt=""
             />
             <Link>

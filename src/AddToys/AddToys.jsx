@@ -4,7 +4,7 @@ import { AuthContextProvider } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const AddToys = () => {
-  const { user } = useContext(AuthContextProvider);
+  const { user, loading } = useContext(AuthContextProvider);
   const handleAddToys = (e) => {
     e.preventDefault();
     const form = e.target;
