@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContextProvider } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user, loading } = useContext(AuthContextProvider);
   const [myToys, setMyToys] = useState([]);
+  const [control, setControl] = useState(false);
 
   useEffect(() => {
     const fetchToys = async () => {
@@ -22,8 +24,33 @@ const MyToys = () => {
     if (!loading && user?.email) {
       fetchToys();
     }
-  }, [user?.email, loading]);
+  }, [user?.email, loading, control]);
 
+  const handleDelete = (id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/allToys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              setControl(!control);
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      }
+    });
+  };
   if (loading) {
     return (
       <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
@@ -88,7 +115,12 @@ const MyToys = () => {
               <td>$ {toy.price}</td>
               <td>{toy.quantity}</td>
               <th>
-                <button className="btn mr-4">Delete</button>
+                <button
+                  onClick={() => handleDelete(toy._id)}
+                  className="btn mr-4"
+                >
+                  Delete
+                </button>
                 <Link to={`/update/${toy._id}`}>
                   <button className="btn bg-[#ECCC68] border-none text-gray-900 hover:text-white">
                     Update

@@ -51,15 +51,15 @@ const Update = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        // if (data.insertedId) {
-        //   Swal.fire({
-        //     title: "Toys Added Successfully!",
-        //     text: "Want to add more toys ?",
-        //     icon: "success",
-        //     confirmButtonText: "Yeah",
-        //   });
-        //   form.reset();
-        // }
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Toys Updated Successfully!",
+
+            icon: "success",
+            confirmButtonText: "Nice",
+          });
+          form.reset();
+        }
         console.log(data);
       });
   };
