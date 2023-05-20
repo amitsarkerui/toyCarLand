@@ -19,7 +19,7 @@ const NavBar = () => {
       {user ? (
         <>
           <li>
-            <Link>My Toys</Link>
+            <Link to={"/myToys"}>My Toys</Link>
           </li>
           <li>
             <Link to={"/addToys"}>Add a Toys</Link>

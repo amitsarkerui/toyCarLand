@@ -10,6 +10,8 @@ import Register from "./Register/Register.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import AddToys from "./AddToys/AddToys.jsx";
 import AllToys from "./Alltoys/AllToys.jsx";
+import MyToys from "./MyToys/MyToys.jsx";
+import Update from "./Update/Update.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +37,17 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/allToys"),
+        loader: () => fetch("https://toy-cars-server-psi.vercel.app/allToys"),
+      },
+      {
+        path: "/myToys",
+        element: <MyToys></MyToys>,
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allToys/${params.id}`),
       },
     ],
   },

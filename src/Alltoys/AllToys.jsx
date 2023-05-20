@@ -5,7 +5,7 @@ const AllToys = () => {
   const allToys = useLoaderData();
 
   return (
-    <div className="overflow-x-auto w-full py-20">
+    <div className="overflow-x-auto w-full py-24">
       <table className="table w-full">
         {/* head */}
         <thead>
