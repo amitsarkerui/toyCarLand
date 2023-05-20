@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
   const loadedToys = useLoaderData();
@@ -119,9 +119,11 @@ const AllToys = () => {
                   <td>$ {toy.price}</td>
                   <td>{toy.quantity}</td>
                   <th>
-                    <button className="btn bg-[#ECCC68] border-none text-gray-900 hover:text-white">
-                      details
-                    </button>
+                    <Link to={`/toyDetails/${toy._id}`}>
+                      <button className="btn bg-[#ECCC68] border-none text-gray-900 hover:text-white">
+                        details
+                      </button>
+                    </Link>
                   </th>
                 </tr>
               </tbody>
