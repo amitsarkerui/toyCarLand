@@ -4,6 +4,7 @@ import Gallery from "./Gallery";
 import Category from "./Category";
 import { useLoaderData } from "react-router-dom";
 import Newsletter from "./Newsletter";
+import Video from "./video";
 
 const Home = () => {
   const allToys = useLoaderData();
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero></Hero>
       <Category allToys={allToys}></Category>
       <Gallery></Gallery>
+      <Video></Video>
       <Newsletter></Newsletter>
     </div>
   );

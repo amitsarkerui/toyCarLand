@@ -2,7 +2,7 @@ import React from "react";
 
 const Newsletter = () => {
   return (
-    <div className="grid grid-cols-1 gap-3 items-center bg-slate-100 p-8 rounded-xl md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-3 items-center bg-slate-100 p-8 rounded-xl md:grid-cols-3 my-20">
       <img
         className="h-full object-cover rounded-lg"
         src="https://i.ibb.co/9qjW45K/red-toy-car-with-christmas-tree-it-bunch-gifts-christmas-tree-background-min.jpg"
@@ -23,7 +23,7 @@ const Newsletter = () => {
             placeholder="Email please"
             className="input input-bordered w-full max-w-xs"
           />
-          <button className="btn bg-[#ECCC68] border-none ml-2">
+          <button className="btn bg-[#ECCC68] border-none ml-2 sm:mt-3">
             Subscribe
           </button>
         </div>

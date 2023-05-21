@@ -3,7 +3,7 @@ import React from "react";
 const Gallery = () => {
   return (
     <div>
-      <div className="container mx-auto mb-24">
+      <div className="container mx-auto mb-20">
         <h2 className="text-3xl text-center mt-20 mb-10">Gallery</h2>
         <div className="grid gap-5 grid-cols-1 md:grid-cols-4">
           <img
