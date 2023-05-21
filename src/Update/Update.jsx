@@ -67,7 +67,7 @@ const Update = () => {
 
   return (
     <div className="container mx-auto py-20">
-      <PageTitle title="Update"></PageTitle>;
+      <PageTitle title="Update"></PageTitle>
       <Link to={"/myToys"}>
         <span className="flex items-center gap-2">
           <svg

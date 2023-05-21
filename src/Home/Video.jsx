@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Video = () => {
+  useEffect(() => {
+    Aos.init({ duration: 100 });
+  }, []);
   return (
-    <div>
+    <div data-aos="fade-left">
       <h2 className="text-center text-3xl mb-6">Watch Kid's Fun</h2>
       <div className="bg-[url('https://i.ibb.co/cJxkB2T/Optimized-children-playing-grass.jpg')] bg-cover bg-center  rounded-2xl">
         <div className="bg-gradient-to-r from-[#000000] to-[rgba(236, 204, 104, 0.6)] text-2xl text-center py-52 rounded-2xl">

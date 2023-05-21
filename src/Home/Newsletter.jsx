@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Newsletter = () => {
+  useEffect(() => {
+    Aos.init({ duration: 100 });
+  }, []);
   return (
-    <div className="grid grid-cols-1 gap-3 items-center bg-slate-100 p-8 rounded-xl md:grid-cols-3 my-20">
+    <div
+      className="grid grid-cols-1 gap-3 items-center bg-slate-100 p-8 rounded-xl md:grid-cols-3 my-20"
+      data-aos="fade-right"
+    >
       <img
         className="h-full object-cover rounded-lg"
         src="https://i.ibb.co/9qjW45K/red-toy-car-with-christmas-tree-it-bunch-gifts-christmas-tree-background-min.jpg"

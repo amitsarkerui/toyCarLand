@@ -1,12 +1,17 @@
 import { Rating } from "@smastrom/react-rating";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Swal from "sweetalert2";
 import { AuthContextProvider } from "../AuthProvider/AuthProvider";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Category = (props) => {
+  useEffect(() => {
+    Aos.init({ duration: 100 });
+  }, []);
   const { user } = useContext(AuthContextProvider);
   const allToys = props.allToys;
   const [racing, setRacing] = useState([]);
@@ -75,7 +80,7 @@ const Category = (props) => {
           </Tab>
         </TabList>
         {/* -----------------All ---------------------- */}
-        <TabPanel>
+        <TabPanel data-aos="fade-right">
           <div className="grid grid-cols-1 gap-7 md:grid-cols-2">
             {allToys.map((toy) => (
               <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2 rounded-2xl bg-gray-100 p-5">
