@@ -36,7 +36,7 @@ const ToyDetails = () => {
           </span>
           <p>In stock: {quantity}</p>
         </span>
-        <span mt-10>
+        <span className="mt-10">
           <p>Description :{description}</p>
         </span>
       </div>

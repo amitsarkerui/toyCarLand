@@ -19,25 +19,16 @@ const AllToys = () => {
     setAllToys(filteredToys);
   };
   const handleConfirmation = (id) => {
-    if (user) {
-      navigate(`/toyDetails/${id}`);
-    }
     if (!user) {
       Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "Please login!",
+        text: "Please Login before view details",
         icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Login",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate(`/toyDetails/${id}`);
-        }
+        confirmButtonText: "okey",
       });
     }
   };
+
   return (
     <div className="overflow-x-auto w-full py-16">
       <h2 className="text-2xl text-center mb-8">All Toys</h2>
@@ -142,7 +133,10 @@ const AllToys = () => {
                   <td>$ {toy.price}</td>
                   <td>{toy.quantity}</td>
                   <th>
-                    <Link onClick={() => handleConfirmation(toy._id)}>
+                    <Link
+                      onClick={handleConfirmation}
+                      to={`/toyDetails/${toy._id}`}
+                    >
                       <button className="btn bg-[#ECCC68] border-none text-gray-900 hover:text-white">
                         Details
                       </button>

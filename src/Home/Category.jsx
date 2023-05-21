@@ -1,10 +1,13 @@
 import { Rating } from "@smastrom/react-rating";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Swal from "sweetalert2";
+import { AuthContextProvider } from "../AuthProvider/AuthProvider";
 
 const Category = (props) => {
+  const { user } = useContext(AuthContextProvider);
   const allToys = props.allToys;
   const [racing, setRacing] = useState([]);
   const [truck, setTruck] = useState([]);
@@ -26,6 +29,17 @@ const Category = (props) => {
       (toy) => toy.category === "Monster Car"
     );
     setMonster(monsterTruck);
+  };
+
+  const handleConfirmation = (id) => {
+    if (!user) {
+      Swal.fire({
+        title: "Please login!",
+        text: "Please Login before view details",
+        icon: "warning",
+        confirmButtonText: "okey",
+      });
+    }
   };
   return (
     <div className="my-16">
@@ -91,7 +105,10 @@ const Category = (props) => {
                     </span>
                   </span>
                   <p>In stock: {toy.quantity}</p>
-                  <Link to={"/toyDetails/:id"}>
+                  <Link
+                    onClick={handleConfirmation}
+                    to={`/toyDetails/${toy._id}`}
+                  >
                     <button className="btn btn-block bg-[#ECCC68] border-none text-gray-900 hover:text-white mt-4">
                       Details
                     </button>
@@ -132,7 +149,10 @@ const Category = (props) => {
                     </span>
                   </span>
                   <p>In stock: {toy.quantity}</p>
-                  <Link to={"/toyDetails/:id"}>
+                  <Link
+                    onClick={handleConfirmation}
+                    to={`/toyDetails/${toy._id}`}
+                  >
                     <button className="btn btn-block bg-[#ECCC68] border-none text-gray-900 hover:text-white mt-4">
                       Details
                     </button>
@@ -173,7 +193,10 @@ const Category = (props) => {
                     </span>
                   </span>
                   <p>In stock: {toy.quantity}</p>
-                  <Link to={"/toyDetails/:id"}>
+                  <Link
+                    onClick={handleConfirmation}
+                    to={`/toyDetails/${toy._id}`}
+                  >
                     <button className="btn btn-block bg-[#ECCC68] border-none text-gray-900 hover:text-white mt-4">
                       Details
                     </button>
@@ -183,7 +206,7 @@ const Category = (props) => {
             ))}
           </div>
         </TabPanel>
-        {/* -----------------Truck ---------------------- */}
+        {/* -----------------Monster ---------------------- */}
         <TabPanel>
           <div className="grid grid-cols-1 gap-7 md:grid-cols-2">
             {monster.map((toy) => (
@@ -214,7 +237,10 @@ const Category = (props) => {
                     </span>
                   </span>
                   <p>In stock: {toy.quantity}</p>
-                  <Link to={"/toyDetails/:id"}>
+                  <Link
+                    onClick={handleConfirmation}
+                    to={`/toyDetails/${toy._id}`}
+                  >
                     <button className="btn btn-block bg-[#ECCC68] border-none text-gray-900 hover:text-white mt-4">
                       Details
                     </button>
