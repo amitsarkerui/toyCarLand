@@ -3,6 +3,7 @@ import logo from "../assets/logo/logo.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContextProvider } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import PageTitle from "../PageTitle";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ const Login = () => {
   };
   return (
     <div className="mb-5 mt-16">
+      <PageTitle title="Login"></PageTitle>
       <section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700 rounded-xl">
         <div className="container h-full p-10">
           <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContextProvider } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import PageTitle from "../PageTitle";
 
 const AddToys = () => {
   const { user, loading } = useContext(AuthContextProvider);
@@ -17,7 +18,6 @@ const AddToys = () => {
     const photo = form.photo.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
-
     const newToy = {
       name,
       seller,
@@ -51,8 +51,10 @@ const AddToys = () => {
         }
       });
   };
+
   return (
     <div className="container mx-auto py-20">
+      <PageTitle title="Add Toys"></PageTitle>
       <Link to={"/"}>
         <span className="flex items-center gap-2">
           <svg

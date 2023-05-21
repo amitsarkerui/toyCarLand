@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import PageTitle from "../PageTitle";
 
 const Update = () => {
   const toys = useLoaderData();
@@ -63,8 +64,10 @@ const Update = () => {
         console.log(data);
       });
   };
+
   return (
     <div className="container mx-auto py-20">
+      <PageTitle title="Update"></PageTitle>;
       <Link to={"/myToys"}>
         <span className="flex items-center gap-2">
           <svg

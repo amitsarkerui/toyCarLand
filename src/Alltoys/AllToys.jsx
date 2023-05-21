@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContextProvider } from "../AuthProvider/AuthProvider";
+import PageTitle from "../PageTitle";
 
 const AllToys = () => {
   const { user } = useContext(AuthContextProvider);
@@ -38,6 +39,7 @@ const AllToys = () => {
   };
   return (
     <div className="overflow-x-auto w-full py-16">
+      <PageTitle title="All Toys"></PageTitle>
       <h2 className="text-2xl text-center mb-8">All Toys</h2>
       <div className="flex gap-8 justify-between">
         <form onSubmit={handleSearch} className="w-1/3 mb-10 ">

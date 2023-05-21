@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContextProvider } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import PageTitle from "../PageTitle";
 
 const MyToys = () => {
   const { user, loading } = useContext(AuthContextProvider);
@@ -73,6 +74,7 @@ const MyToys = () => {
 
   return (
     <div className="overflow-x-auto w-full py-24">
+      <PageTitle title="My Toys"></PageTitle>
       <table className="table w-full">
         {/* head */}
         <thead>

@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
+import PageTitle from "../PageTitle";
 
 const ToyDetails = () => {
   const loadedToy = useLoaderData();
@@ -20,6 +21,7 @@ const ToyDetails = () => {
   } = loadedToy;
   return (
     <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2 rounded-2xl bg-gray-100 p-10 mt-16">
+      <PageTitle title="Toy Details"></PageTitle>
       <img className="rounded-lg h-full object-cover" src={photo} alt="" />
       <div>
         <h1 className="text-2xl my-3">Toy's Name: {name}</h1>
