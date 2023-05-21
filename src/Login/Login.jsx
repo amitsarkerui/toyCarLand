@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import logo from "../assets/logo/logo.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContextProvider } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  let fromLink = location.state?.from?.pathname || "/";
   const { login, googleLogin } = useContext(AuthContextProvider);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -15,7 +18,7 @@ const Login = () => {
     login(email, password)
       .then((res) => {
         const loggedUser = res.user;
-        navigate("/");
+        navigate(fromLink);
       })
       .catch((err) => {
         Swal.fire({
@@ -30,7 +33,7 @@ const Login = () => {
     googleLogin()
       .then((res) => {
         const loggedUser = res.user;
-        navigate("/");
+        navigate(fromLink);
       })
       .catch((err) => {
         Swal.fire({
