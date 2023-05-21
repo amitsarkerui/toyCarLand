@@ -15,6 +15,7 @@ import Update from "./Update/Update.jsx";
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 import ToyDetails from "./ToyDetails/ToyDetails.jsx";
 import Blog from "./Blog/Blog.jsx";
+import Error404 from "./Page404/Error404.jsx";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Error404></Error404>,
   },
 ]);
 
