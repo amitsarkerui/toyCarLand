@@ -19,6 +19,9 @@ const AllToys = () => {
     setAllToys(filteredToys);
   };
   const handleConfirmation = (id) => {
+    if (user) {
+      navigate(`/toyDetails/${id}`);
+    }
     if (!user) {
       Swal.fire({
         title: "Are you sure?",
@@ -33,9 +36,6 @@ const AllToys = () => {
           navigate(`/toyDetails/${id}`);
         }
       });
-    }
-    if (user) {
-      navigate(`/toyDetails/${id}`);
     }
   };
   return (
@@ -144,7 +144,7 @@ const AllToys = () => {
                   <th>
                     <Link onClick={() => handleConfirmation(toy._id)}>
                       <button className="btn bg-[#ECCC68] border-none text-gray-900 hover:text-white">
-                        details
+                        Details
                       </button>
                     </Link>
                   </th>

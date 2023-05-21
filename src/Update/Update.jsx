@@ -42,7 +42,7 @@ const Update = () => {
     };
     console.log(updatedToy);
 
-    fetch(`http://localhost:5000/allToys/${_id}`, {
+    fetch(`https://toy-cars-server-psi.vercel.app/allToys/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

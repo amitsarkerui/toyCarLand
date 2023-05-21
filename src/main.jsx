@@ -23,6 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("https://toy-cars-server-psi.vercel.app/allToys"),
       },
       {
         path: "/login",
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <Update></Update>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allToys/${params.id}`),
+          fetch(`https://toy-cars-server-psi.vercel.app/allToys/${params.id}`),
       },
       {
         path: "/toyDetails/:id",
@@ -67,7 +68,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allToys/${params.id}`),
+          fetch(`https://toy-cars-server-psi.vercel.app/allToys/${params.id}`),
       },
     ],
   },
