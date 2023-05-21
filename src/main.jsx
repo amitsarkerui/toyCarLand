@@ -14,6 +14,7 @@ import MyToys from "./MyToys/MyToys.jsx";
 import Update from "./Update/Update.jsx";
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 import ToyDetails from "./ToyDetails/ToyDetails.jsx";
+import Blog from "./Blog/Blog.jsx";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`https://toy-cars-server-psi.vercel.app/allToys/${params.id}`),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
     ],
   },
