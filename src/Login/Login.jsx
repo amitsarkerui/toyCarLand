@@ -6,13 +6,28 @@ import Swal from "sweetalert2";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login } = useContext(AuthContextProvider);
+  const { login, googleLogin } = useContext(AuthContextProvider);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     login(email, password)
+      .then((res) => {
+        const loggedUser = res.user;
+        navigate("/");
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: `${err.message}`,
+          text: "Please check and try again",
+          icon: "warning",
+          confirmButtonText: "Okey",
+        });
+      });
+  };
+  const handleGoogleLogin = () => {
+    googleLogin()
       .then((res) => {
         const loggedUser = res.user;
         navigate("/");
@@ -66,14 +81,20 @@ const Login = () => {
                             className="input input-bordered w-full"
                           />
                         </div>
-                        <div className="mb-12 pb-1 pt-1 text-center mt-6">
+                        <div className="mb-2 pb-1 pt-1 text-center mt-6">
                           <input
                             type="submit"
                             value="Login"
-                            className=" mb-2 btn btn-block bg-[#ECCC68] border-none"
+                            className="  btn btn-block bg-[#ECCC68] border-none"
                           />
                         </div>
                       </form>
+                      <button
+                        onClick={handleGoogleLogin}
+                        className="btn btn-block mb-12 bg-[#4285F4] border-none"
+                      >
+                        Continue with Google
+                      </button>
                       <div className="flex items-center justify-between pb-6">
                         <p className="mb-0 mr-2">Don't have an account?</p>
                         <Link to={"/register"}>
