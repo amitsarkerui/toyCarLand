@@ -22,7 +22,7 @@ const ToyDetails = () => {
 
   return (
     <div>
-      <PageTitle title="Toy Details"></PageTitle>
+      <PageTitle title="Toy Detail"></PageTitle>
       <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2 rounded-2xl bg-gray-100 p-10 mt-16">
         <img className="rounded-lg h-full object-cover" src={photo} alt="" />
         <div>
